@@ -1,0 +1,30 @@
+[project]
+name = "itdshot"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.14"
+dependencies = [
+    "arrow>=1.4.0",
+    "beautifulsoup4>=4.15.0",
+    "click>=8.4.1",
+    "itd-sdk>=2.5.2",
+    "pillow>=12.2.0",
+    "playwright>=1.60.0",
+]
+
+[dependency-groups]
+dev = [
+    "pyinstaller>=6.21.0",
+]
+
+[project.scripts]
+itdshot = "itdshot.cli:post_screenshot"
+
+[build-system]
+requires = ['uv_build==0.11']
+build-backend = 'uv_build'
+
+[tool.uv.build-backend]
+module-name = 'itdshot'
+module-root = ''
