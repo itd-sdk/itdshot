@@ -1,11 +1,13 @@
-from copy import copy
+from copy import copy as copy_obj
 from pathlib import Path
+from subprocess import run
 
 from arrow import get
 from bs4 import BeautifulSoup, Tag
 from itd import Post
 from itd.file import PostAttach
 from playwright.sync_api import sync_playwright
+from pyperclip import copy
 
 base_path = Path(__file__).parent
 
@@ -69,7 +71,7 @@ def edit_html(post: Post, dark: bool = True):
             assert template
 
             for attachment in post.attachments[::-1]:
-                img = copy(template)
+                img = copy_obj(template)
                 set_img_attrs(img, attachment)
                 container.insert(0, img)
 
@@ -145,13 +147,23 @@ def edit_html(post: Post, dark: bool = True):
         find("dominant").extract()
     find("views-count").string = str(post.views_count)
 
-    (base_path / "post.html").write_text(str(soup.contents[0]))
+    (base_path.parent / "out.html").write_text(str(soup.contents[0]))
 
 
-def screenshot(path: str):
+def screenshot(path: Path, clipboard: bool = False):
     with sync_playwright() as p:
         browser = p.firefox.launch()
         page = browser.new_page()
-        page.goto((base_path / "post.html").as_uri())
+        page.goto((base_path.parent / "out.html").as_uri())
         page.locator("#post").screenshot(path=path)
+
+        if clipboard:
+            run(
+                ["xclip", "-i", "-selection", "clipboard", "-t", "text/uri-list"],
+                input=path.absolute().as_uri().encode("utf-8"),
+                check=True
+            )
+            print("copied")
+        else:
+            print(f"saved to {path}")
         browser.close()

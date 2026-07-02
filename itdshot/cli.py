@@ -1,3 +1,5 @@
+from pathlib import Path
+
 import click
 from itd import ITDClient, Post
 
@@ -9,7 +11,9 @@ from itdshot.main import edit_html, screenshot
     "-d", "--dark/--no-dark", help="Enable dark theme", default=True, is_flag=True
 )
 @click.argument("id_or_url")
-@click.argument("output", required=False)
+@click.argument(
+    "output", required=False, type=click.Path(dir_okay=False, writable=True)
+)
 @click.argument("token", envvar="ITD_TOKEN")
 def post_screenshot(dark: bool, id_or_url: str, output: str | None, token: str):
     print("init itd client")
@@ -25,4 +29,13 @@ def post_screenshot(dark: bool, id_or_url: str, output: str | None, token: str):
     )
     edit_html(post, dark)
     print("screenshot")
-    screenshot(output or f"{post.id}.png")
+
+    path = Path(output or f"{post.id}.png")
+
+    clipboard = output in ("copy", "c", "clipboard")
+    if clipboard:
+        path = Path("clipboard.png")
+    screenshot(path, clipboard)
+
+    # if clipboard:
+    #     path.unlink()
