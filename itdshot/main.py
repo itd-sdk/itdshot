@@ -1,4 +1,4 @@
-from copy import copy as copy_obj
+from copy import copy
 from pathlib import Path
 from subprocess import run
 
@@ -7,7 +7,6 @@ from bs4 import BeautifulSoup, Tag
 from itd import Post
 from itd.file import PostAttach
 from playwright.sync_api import sync_playwright
-from pyperclip import copy
 
 base_path = Path(__file__).parent
 
@@ -71,7 +70,7 @@ def edit_html(post: Post, dark: bool = True):
             assert template
 
             for attachment in post.attachments[::-1]:
-                img = copy_obj(template)
+                img = copy(template)
                 set_img_attrs(img, attachment)
                 container.insert(0, img)
 
@@ -131,7 +130,7 @@ def edit_html(post: Post, dark: bool = True):
         find("orig-comments-count").string = str(orig.comments_count)
         find("orig-reposts-count").string = str(orig.reposts_count)
         if orig.dominant:
-            find("orig-dominant").string = orig.dominant
+            find("orig-dominant-value").string = orig.dominant
         else:
             find("orig-dominant").extract()
         find("orig-views-count").string = str(orig.views_count)
@@ -142,7 +141,7 @@ def edit_html(post: Post, dark: bool = True):
     find("comments-count").string = str(post.comments_count)
     find("reposts-count").string = str(post.reposts_count)
     if post.dominant:
-        find("dominant").string = post.dominant
+        find("dominant-value").string = post.dominant
     else:
         find("dominant").extract()
     find("views-count").string = str(post.views_count)
