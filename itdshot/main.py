@@ -21,8 +21,11 @@ def edit_html(post: Post, dark: bool = True):
         assert body
         body["data-theme"] = "dark"
 
-    def find(id: str) -> Tag:
-        element = soup.find(lambda e: e.get("id") == id)
+    def find(query: str, element: Tag | None = None, by: str = "id") -> Tag:
+        if by == "tag":
+            element = (element or soup).find(query)
+        else:
+            element = (element or soup).find(lambda e: e.get(by) == query)
         assert element
         return element
 
@@ -38,12 +41,6 @@ def edit_html(post: Post, dark: bool = True):
     find("created-at").string = get(post.created_at).humanize(locale="ru-RU")
     find("content").string = post.content
 
-    def set_img_attrs(img: Tag, attachment: PostAttach):
-        img["src"] = attachment.url
-        img["width"] = str(attachment.width)
-        img["height"] = str(attachment.height)
-        img["style"] = f"aspect-ratio: {attachment.width} / {attachment.height}"
-
     attachments = find("attachments")
     if post.attachments:
         attachments["data-count"] = str(len(post.attachments))
@@ -55,9 +52,7 @@ def edit_html(post: Post, dark: bool = True):
                 f"aspect-ratio: {post_attachment.width} / {post_attachment.height}"
             )
             del attachment["id"]
-            img = attachment.find("img")
-            assert img
-            set_img_attrs(img, post_attachment)
+            find("img", attachment, by="tag")["src"] = post_attachment.url
             attachments.insert(0, attachment)
         else:
             container = attachments.new_tag(
@@ -66,12 +61,11 @@ def edit_html(post: Post, dark: bool = True):
             )
             attachments.insert(0, container)
             template_container = find("attachment-template")
-            template = template_container.find("img")
-            assert template
+            template = find("img", template_container, by="tag")
 
             for attachment in post.attachments[::-1]:
                 img = copy(template)
-                set_img_attrs(img, attachment)
+                img["src"] = attachment.url
                 container.insert(0, img)
 
             template_container.extract()
@@ -100,12 +94,10 @@ def edit_html(post: Post, dark: bool = True):
                 post_attachment = orig.attachments[0]
                 attachment = find("orig-attachment-template")
                 attachment["style"] = (
-                    f"width: {post_attachment.width}; aspect-ratio: {post_attachment.width} / {post_attachment.height}"
+                    f"aspect-ratio: {post_attachment.width} / {post_attachment.height}"
                 )
                 del attachment["id"]
-                img = attachment.find("img")
-                assert img
-                set_img_attrs(img, post_attachment)
+                find("img", attachment, by="tag")["src"] = post_attachment.url
                 attachments.insert(0, attachment)
             else:
                 container = attachments.new_tag(
@@ -114,12 +106,11 @@ def edit_html(post: Post, dark: bool = True):
                 )
                 attachments.insert(0, container)
                 template_container = find("orig-attachment-template")
-                template = template_container.find("img")
-                assert template
+                template = find("img", template_container, by="tag")
 
                 for attachment in orig.attachments[::-1]:
                     img = copy(template)
-                    set_img_attrs(img, attachment)
+                    img["src"] = attachment.url
                     container.insert(0, img)
 
                 template_container.extract()
