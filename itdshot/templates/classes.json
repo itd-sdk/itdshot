@@ -1,0 +1,194 @@
+{
+    "avatar": {
+        "avatar": "bQNJ",
+        "xs": "vwco",
+        "emoji": "bb9m",
+        "onlineDot": "bBXS",
+        "sm": "dBPS",
+        "md": "KYI0",
+        "lg": "HDch",
+        "xl": "NpWi",
+        "badge": "asJL",
+        "followBadge": "aiDX",
+        "notFollowing": "cxgG",
+        "following": "xVJm"
+    },
+    "user_name": {
+        "userName": "CmY2",
+        "identity": "Zh3y",
+        "badges": "wDWg",
+        "pinBadge": "AeBU",
+        "text": "DnLn",
+        "nukstaGlow": "xdCF",
+        "xs": "zMra",
+        "sm": "KdzL",
+        "md": "fyEE",
+        "lg": "fL73",
+        "nameEnding": "o3mZ",
+        "pinWrapper": "uw3U",
+        "nickname": "ZmBx",
+        "schoolSilver": "ZYe2",
+        "withNickname": "oek6",
+        "trailing": "p8nS",
+        "plain": "pGqd",
+        "compact": "kkoI",
+        "pinClickable": "OBm4",
+        "pinTooltip": "fGSC",
+        "pinTooltipFadeIn": "uJrB",
+        "pinTooltipRow": "ZD6v",
+        "pinTooltipLabel": "uHKK",
+        "pinTooltipArrow": "TF5n"
+    },
+    "dropdown": {
+        "dropdownWrapper": "Qjce",
+        "trigger": "hvmS",
+        "menu": "vPNk",
+        "hidden": "uQPf",
+        "menuItem": "IzZn",
+        "danger": "iZN1",
+        "itemIcon": "fLLJ",
+        "itemLabel": "m8wd",
+        "divider": "GVM1"
+    },
+    "text": {
+        "underline": "M6ie",
+        "monospace": "vjBL",
+        "quote": "zR63",
+        "spoiler": "dq6p",
+        "revealed": "QcmL",
+        "link": "XZs2",
+        "mention": "SCZm",
+        "hashtag": "ZzoO",
+        "corrector": "y6gx"
+    },
+    "media": {
+        "mediaWrapper": "VxVR",
+        "isFeed": "O0Q5",
+        "single": "SkYb",
+        "image": "Uvrj",
+        "singleVideo": "jTci",
+        "media": "RJ5h",
+        "dragging": "oJkX"
+    },
+    "tool": {
+        "panel": "eDxQ",
+        "panelBody": "t7Tp",
+        "heading": "V3ao",
+        "toolHint": "F96F",
+        "actionButton": "uq6q",
+        "preview": "HLG9",
+        "invalid": "ChMS",
+        "error": "a3nk",
+        "signature": "t4XP",
+        "signatureAction": "Kpit",
+        "signatureText": "bbYx",
+        "actor": "nVNQ",
+        "stamp": "KXp9",
+        "signatureMenu": "HfmV",
+        "srOnly": "QWxU"
+    },
+    "red_pen": {
+        "textLayer": "GMWl",
+        "withCorrections": "bqRt",
+        "overlay": "yDSF",
+        "strike": "gz7P",
+        "handwriting": "VtcN",
+        "tools": "PZel",
+        "selected": "KmJc",
+        "replacement": "e0LA",
+        "penIcon": "Of7h",
+        "signatureText": "bELb"
+    },
+    "header": {
+        "header": "Ng6D",
+        "headerMain": "VETZ",
+        "headerAccessory": "ryb2",
+        "hasAccessory": "jSsc",
+        "authorInfo": "tE0q",
+        "moreDropdown": "FMQG",
+        "pinnedBadge": "y0Zb",
+        "authorLink": "S3zm",
+        "time": "NoH9",
+        "edited": "mZxL"
+    },
+    "actions": {
+        "actions": "RAMt",
+        "compact": "cVrs",
+        "action": "PROg",
+        "views": "s3gl",
+        "flush": "ybeJ",
+        "actionsLeft": "UedJ",
+        "disabled": "j90U",
+        "liked": "U6VV",
+        "unliked": "WMmo",
+        "reposted": "iXF9",
+        "noAnimation": "KeLy",
+        "reactionWrapper": "zIse",
+        "actionsRight": "uFxW",
+        "captured": "Dzh3",
+        "capturedEmoji": "uyJE",
+        "capturedText": "ck7t",
+        "capturedMobile": "onnu",
+        "capturedSolo": "OFly"
+    },
+    "post": {
+        "post": "OAX3",
+        "notebookPost": "LwHs",
+        "originalNotebook": "UIHj",
+        "text": "lCHz",
+        "notebookGrid": "LVWE",
+        "notebookRuled": "wChw",
+        "notebookLabel": "LMAu",
+        "postInner": "qJiW",
+        "isFeed": "HSJq",
+        "postBody": "xszU",
+        "avatarLink": "gWD9",
+        "postContent": "KaYd",
+        "textWrapper": "nVsF",
+        "collapsed": "aZ7O",
+        "expandButton": "Iwff",
+        "originalPost": "R49S",
+        "originalPostText": "WSKG",
+        "originalPostHeader": "nlwp",
+        "originalPostTime": "WGcq",
+        "originalPostMedia": "Vgyz"
+    },
+    "assets": {
+        "corrector_stamp": "/assets/icon-37-CNQcYznR.svg",
+        "red_pen_icon": "/assets/icon2-44-BljxXBI-.svg"
+    },
+    "corrector_textures": [
+        [
+            "M1 5L9 3 18 4 27 2 40 3 53 1 65 3 82 2 95 3 109 1 118 3 117 9 120 16 117 23 103 24 92 26 76 24 64 26 48 24 33 26 20 24 8 26 2 23 3 15Z",
+            "M7 9Q40 6 113 8M5 19Q60 16 113 19M18 23L88 22"
+        ],
+        [
+            "M2 8Q4 4 15 5L37 3 58 4 81 2 108 4Q116 3 119 8L116 14 118 20Q114 25 105 23L83 25 66 23 45 25 21 23 5 24 1 20 4 14Z",
+            "M10 8L44 7 80 6 109 8M8 17Q58 20 111 16M22 22L69 22"
+        ],
+        [
+            "M1 9L13 6 24 7 32 4 49 5 63 2 78 4 94 2 114 3 119 6 117 11 119 19 110 21 94 20 81 24 68 23 55 26 39 24 23 26 8 24 2 21 4 15Z",
+            "M8 12Q51 5 111 7M12 21Q68 19 108 15M28 24L72 21"
+        ],
+        [
+            "M2 4L17 2 28 4 39 3 50 5 67 3 78 5 96 4 116 7 119 12 116 16 118 23 109 25 92 23 77 25 61 22 49 24 33 22 19 24 3 21 1 16 4 11Z",
+            "M9 7Q60 8 112 11M6 17L38 18 66 17 110 21M20 21L76 23"
+        ],
+        [
+            "M2 7Q4 2 12 4Q17 1 26 4Q33 2 41 4Q48 1 58 3Q69 1 77 4Q85 2 94 4Q105 1 115 5Q121 7 117 13Q121 18 115 24Q105 27 97 24Q87 27 78 24Q67 27 57 24Q47 27 37 24Q23 27 17 24Q7 27 2 22L4 15Z",
+            "M9 10Q39 6 65 9T112 9M8 20Q40 24 65 20T112 21"
+        ],
+        [
+            "M1 6L8 4 34 3 58 5 87 3 111 4 119 8 115 13 118 22 113 25 86 23 62 25 36 23 10 25 2 21 5 15Z",
+            "M8 8L33 6 59 8 86 6 112 9M7 18L35 20 65 18 93 21 113 19M11 23L47 22M74 23L105 24"
+        ],
+        [
+            "M3 5L15 2 21 4 29 2 37 5 48 3 57 5 70 2 79 4 90 2 99 4 115 3 118 7 116 12 120 19 116 24 103 23 92 26 81 24 68 26 58 23 45 25 33 23 24 26 12 24 1 23 3 17 1 11Z",
+            "M8 8L24 7M31 7L63 8M73 6L112 7M6 13L41 12M53 13L111 11M10 21L54 22M66 22L111 21"
+        ],
+        [
+            "M1 11Q7 4 18 5L35 3 52 4 70 2 88 4 106 3Q117 2 119 8L116 14 120 20Q115 25 104 24L87 26 69 24 51 26 34 23 16 25Q3 25 2 20L4 15Z",
+            "M7 11Q42 5 77 8T112 7M8 17Q50 21 84 18T113 18M16 23L48 24M91 23L108 22"
+        ]
+    ]
+}
